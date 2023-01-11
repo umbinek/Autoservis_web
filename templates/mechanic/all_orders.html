@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+{% block main %}
+    <section>
+        <h2>Volne obiednavky</h2>
+        <div>
+            <table>
+                <tr>
+                    <th>Zakaznik</th>
+                    <th>Auto</th>
+                    <th>Popis</th>
+                    <th>Datum Vytvoreni</th>
+                    <th>Rezervovat</th>
+                </tr>
+                {% for order in orders %}
+                    <tr>
+                        <th>{{ order['customer'] }}</th>
+                        <th>{{ order['car'] }}</th>
+                        <th>{{ order['description'] }}</th>
+                        <th>{{ order['creation_date'] }}</th>
+                        <th><a href="/add_{{ order['id'] }}">Rezervuj</a></th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+{% endblock %}

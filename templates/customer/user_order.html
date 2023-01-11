@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+
+{% block main %}
+    <section>
+        <h2>Moje opravy</h2>
+        <div>
+            <h4>Mechanik: {{ order["mechanic"] }}</h4>
+            <h4>Zakaznik: {{ order["customer"] }}</h4>
+            <h4>Suciastky:</h4>
+            <ul>
+                {% for part in parts %}
+                    {% if part["is_part"] %}
+                        <li>{{ part["name"] }}: {{ part["price"] }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <h4>Akcie:</h4>
+            <ul>
+                {% for part in parts %}
+                    {% if not part["is_part"] %}
+                        <li>{{ part["name"] }}: {{ part["price"] }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <p> Celkova cena: {{ order["price"] }}</p><br>
+            <p> Popis: {{ order['description'] }} </p><br>
+
+            <h4> Auto: </h4>
+            <p> ŠPZ: {{ car["license"] }}</p><br>
+            <p> Model: {{ car["model"] }}</p><br>
+            <p> Rok: {{ car["year"]}} </p><br>
+
+        </div>
+    </section>
+{% endblock main %}

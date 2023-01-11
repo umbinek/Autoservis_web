@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, nav, main, footer {
+    width: 100%
+}
+
+header {
+    height: 200px
+}
+
+nav {
+    height: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+    display: none;
+    margin: 0
+}
+
+nav ul li, #ham {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+}
+
+#ham {
+    color: white;
+    font-size: 2em;
+}
+
+section {
+    padding: 1vw;
+    position: relative;
+    padding-bottom: 1em;
+}
+
+aside {
+    display: none
+}
+
+.bloky div {
+    background: silver;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px
+}
+
+form div {
+    width: 100%;
+    margin-top: 5px;
+    padding: 4px;
+}
+
+form div label {
+    display: block;
+}
+
+form div input[type="text"] {
+    line-height: 30px;
+    height: 30px;
+    width: 100%;
+    margin: auto;
+}
+
+form div textarea {
+    width: 100%;
+    min-height: 100px;
+    margin: auto;
+}
+
+.info {
+    display: none;
+}
+
+@media only screen and (min-width: 600px) {
+    header, nav, main, footer {
+        width: 75vw;
+        margin: auto;
+        min-width: 600px
+    }
+
+    header {
+        height: 20vw;
+        min-height: 200px
+    }
+
+    header {
+        height: 5vw
+    }
+
+    nav ul {
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    nav ul li ul {
+        display: none;
+    }
+
+    nav ul li:hover ul {
+        display: block;
+        z-index: 10;
+        position: relative;
+    }
+
+    aside {
+        display: block;
+        position: absolute;
+        left: -10vw;
+        width: 9vw;
+    }
+
+    .bloky {
+        display: flex;
+    }
+
+    #ham {
+        display: none
+    }
+
+    form div {
+        width: 100%;
+    }
+
+    form div label {
+        display: inline-block;
+        width: 5em;
+        text-align: right;
+        padding-right: 3px;
+    }
+
+    form div input[type="text"] {
+        width: 50%;
+    }
+
+    form div textarea {
+        width: 50%;
+        min-height: 100px;
+    }
+
+    .info {
+        display: none;
+        position: absolute;
+        width: 400px;
+        min-height: 100px;
+        background: red;
+        border-radius: 10px;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+}

@@ -1,0 +1,70 @@
+{% extends "main.html" %}
+
+{% block main %}
+    <section>
+        <h2>Moje opravy</h2>
+        <div>
+            <h4>Mechanik: {{ order["mechanic"] }}</h4>
+            <h4>Zakaznik: {{ order["customer"] }}</h4>
+            <h4>Suciastky:</h4>
+            <ul>
+                {% for part in parts %}
+                    {% if part["is_part"] %}
+                        <li>
+                            <form action="/delete_part" method="post">
+                                <input type="hidden" name="order_id" value="{{ order['id'] }}">
+                                <input type="hidden" name="part_id" value="{{ part['id'] }}">
+                                {{ part["name"] }}: {{ part["price"] }}
+                                <button type="submit">Odebrat dil</button>
+                            </form>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                <li>
+                    <form action="/add_part" method="post">
+                        <label for="name">Nazev:</label> <input type="text" id="name" name="name">
+                        <label for="price">Cena:</label> <input type="text" id="price" name="price">
+                        <input type="hidden" name="order_id" value="{{ order['id'] }}">
+                        <input type="hidden" name="is_part" value="{{ 1 }}">
+                        <button type="submit">Pridat dil</button>
+                    </form>
+                </li>
+
+
+            </ul>
+            <h4>Akcie:</h4>
+            <ul>
+                {% for part in parts %}
+                    {% if not part["is_part"] %}
+                        <li>
+                            <form action="/delete_part" method="post">
+                                <input type="hidden" name="order_id" value="{{ order['id'] }}">
+                                <input type="hidden" name="part_id" value="{{ part['id'] }}">
+                                {{ part["name"] }}: {{ part["price"] }}
+                                <button type="submit">Odebrat akci</button>
+                            </form>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                <li>
+                    <form action="/add_part" method="post">
+                        <label for="name">Nazev:</label> <input type="text" id="name" name="name">
+                        <label for="price">Cena:</label> <input type="text" id="price" name="price">
+                        <input type="hidden" name="order_id" value="{{ order['id'] }}">
+                         <input type="hidden" name="is_part" value="{{ 0 }}">
+                        <button type="submit">Pridat akci</button>
+                    </form>
+                </li>
+            </ul>
+            <p> Celkova cena: {{ order["price"] }}</p><br>
+            <p> Popis: {{ order['description'] }} </p><br>
+
+            <h4> Auto: </h4>
+            <p> ŠPZ: {{ car["license"] }}</p><br>
+            <p> Model: {{ car["model"] }}</p><br>
+            <p> Rok: {{ car["year"]}} </p><br>
+
+        </div>
+    </section>
+{% endblock main %}

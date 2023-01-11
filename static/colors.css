@@ -1,0 +1,83 @@
+body {
+    background: #CED2D7;
+    
+}
+
+header {
+    background: url('uvodni_foto.jpg') center center;
+    background-size: cover;
+}
+
+header ul {
+    text-align: right;
+}
+
+main {
+    background: white;
+}
+
+footer {
+    background: #6986CA ;
+}
+
+a {
+    color: #4682b4;
+}
+
+nav, nav ul li {
+    background: blue;
+
+}
+
+nav ul li a {
+    color: white;
+}
+
+nav ul li ul li {
+    background: rgb(137, 184, 232)
+}
+
+nav ul li:hover {
+    background: darkblue;
+    color: white;
+}
+
+aside {
+    color: white;
+}
+
+section {
+    border-bottom: 1px dotted rgb(0, 128, 255);
+}
+
+table {
+    border: 2px solid black;
+}
+
+th, td {
+    border: 1px solid black;
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(0, 128, 255, 0.5);
+}
+
+form div {
+    background: silver;
+}
+
+form div textarea, form div input[type="text"] {
+    outline: none;
+    border: 0;
+    border-bottom: 2px solid rgb(0, 128, 255)
+}
+
+form div textarea:focus, form div input[type="text"]:focus {
+    border-bottom: 2px solid black
+}
+
+color-primary-0 { color: #264EAA }	/* Main Primary color */
+color-primary-1 { color: #6986CA }
+color-primary-2 { color: #4466B6 }
+color-primary-3 { color: #113790 }
+color-primary-4 { color: #0B2A71 }

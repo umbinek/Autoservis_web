@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    {% include 'header.html' %}
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+<header>
+    <ul>
+        <li>
+            <a href="/home">{{ username }}</a>
+        </li>
+        <li>
+            <a href="/logout">Logout</a>
+        </li>
+    </ul>
+</header>
+<nav>
+    <ul>
+        {% if '0' in access %}
+            <li><a href="/user_orders">Moje opravy</a></li>
+            <li><a href="/new_order">Nova objednavka</a></li>
+        {% endif %}
+        {% if '1' in access %}
+            <li><a href="/technic_orders">Moje zakazky</a></li>
+            <li><a href="/all_orders">Vsechny zakazky</a></li>
+        {% endif %}
+        {% if '2' in access %}
+            <li><a href="/admin">Sprava systemu</a></li>
+            <li><a href ="/register">Registrace</a></li>
+                
+                
+        {% endif %}
+    </ul>
+</nav>
+<main>
+    {% block main %}
+
+    {% endblock main %}
+</main>
+<footer>
+
+</footer>
+</body>
+</html>

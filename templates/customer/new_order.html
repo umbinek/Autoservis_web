@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+
+{% block main %}
+    <section>
+        <div class="container">
+            <form action="/new_order" method="post">
+                <div class="mb-3">
+                    <label for="SPZ" class="form-label">SPZ</label>
+                    <input type="text" class="form-control" id="SPZ" name="spz">
+                </div>
+                <div class="mb-3">
+                    <label for="Model" class="form-label">Model</label>
+                    <input type="text" class="form-control" id="Model" name="model">
+                </div>
+                <div class="mb-3">
+                    <label for="Rok" class="form-label">Rok</label>
+                    <input type="year" class="form-control" id="Rok" name="rok">
+                </div>
+                <div class="mb-3">
+                    <label for="Popis" class="form-label">Popis</label>
+                    <input type="text" class="form-control" id="Popis" name="popis">
+                </div>
+                <button type="submit" class="btn btn-primary">Vytvor</button>
+            </form>
+        </div>
+    </section>
+{% endblock main %}
+

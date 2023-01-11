@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    {% include 'header.html' %}
+    <meta charset="UTF-8">
+    <title>Autoservis</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <a href="#">odhlásit se</a>
+                <p>uživatel {{ username }}</p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <img src="#" alt="foto_vozidla">
+    </div>
+    <div>
+        <p>popis vozidla</p>
+    </div>
+<main>
+    <ul>
+        <table border = 1>
+            <thead>
+               <td>components</td>
+               <td>price</td>
+            </thead>
+            
+            {% for row in rows %}
+               <tr>
+                  <td>{{row["comp"]}}</td>
+                  <td>{{row["price"]}}</td>
+               </tr>
+            {% endfor %}
+         </table>
+         
+    </ul>
+
+    <form action = "{{ url_for('get_components') }}" method = "POST">
+        <h3>Přidání dalších součástek</h3>
+        součástka<br>
+        <input type = "text" name = "comp" /></br>
+        cena<br>
+        <textarea name = "price" ></textarea><br>
+        <input type = "submit" value = "submit" /><br>
+     </form>
+</main>
+<footer>
+    <h3> Kotnktakty</h3>
+
+</footer>
+</body>
+</html>

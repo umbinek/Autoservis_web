@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+* {
+    font-family: 'Gemunu Libre', sans-serif;
+}
+
+body {
+    font-size: 18px;
+}
+
+img {
+    width: 50%;
+}
+
+.nalevo {
+    float: left;
+    margin-right: 0.5em;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 0.5rem
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.bloky div p {
+    font-size: 0.8rem;
+}
+
+ul, ol {
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+    margin-bottom: 0em;
+}
+
+table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 3px;
+    min-width: 3em;
+}
+
+footer{
+    text-align: center;
+}
+
+#kontkat{
+    text-align: center;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        font-size: 1.8vw;
+    }
+}

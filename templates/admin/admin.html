@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+{% block main %}
+    <section>
+        <h2>Statistiky</h2>
+        <div>
+            <ul>
+                <li>Celkovy pocet obiednavek: {{ stats['total_order_number'] }}</li>
+                <!-- <li>Celkova cena: {{ stats['total_price'] }}</li> -->
+                <!--  <li>Prumierna cena: {{ stats['average_price'] }}</li> -->
+                <!-- <li>Prumierna doba trvani objednavky: {{ stats['average_order_duration'] }}</li> -->
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>Celkovy pocet obiednavek za měsíc: {{ stats['total_order_number_per_month'] }}</li>
+                <!-- <li>Celkova cena: {{ stats['total_price_per_month'] }}</li> -->
+                <!-- <li>Prumierna cena: {{ stats['average_price_per_month'] }}</li> -->
+                <!-- <li>Prumierna doba trvani objednavky: {{ stats['average_order_duration_per_month'] }}</li> -->
+            </ul>
+        </div>
+        <h2>Přehled zakázek</h2>
+        <div>
+            <table>
+                <tr>
+                    <th>
+                        Objednávka
+                    </th>
+                    <th>
+                        Technik
+                    </th>
+                    <th>
+                        Zákazník
+                    </th>
+                </tr>
+                {% for order in orders %}
+                <tr>
+                     <th>{{ order['id'] }}</th>
+                    <th>{{ order['mechanic'] }}</th>
+                    <th>{{ order['customer'] }}</th>
+                    <th><a href="/mechanic_orders/{{ order['id'] }}">Odkaz</a></th>
+
+
+                </tr>
+                {% endfor %}
+            </table>
+            
+        </div>
+        <div>
+                <!-- <ul> -->
+                    <!-- <li>Zakázka {{order_id == 1}}</li> -->
+                    <!-- <li>Na zakázce pracuje: </li> -->
+                    <!-- <div class="dropdown"> -->
+                    <!-- <button class="dropbtn">Změnit</button> -->
+                    <!-- <div class="dropdown-content"> -->
+                    <!-- <a href="#">Mechanik 1</a> -->
+                    <!-- <a href="#">Mechanik 2</a> -->
+                    <!-- > <a href="#">Mechanik 3</a> -->
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </section>
+{% endblock %}
